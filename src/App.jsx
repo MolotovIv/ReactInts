@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="wpapper">
       <Header />
-
       <div className="content">
         <h1>Все вещи</h1>
         <Search />

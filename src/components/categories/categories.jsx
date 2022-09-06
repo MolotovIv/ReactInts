@@ -1,14 +1,37 @@
 import "./categories.scss";
+import React from "react";
 
+const categories = ["футболки", "кофты", "штаны"];
 function Categories() {
+  const [open, setOpen] = React.useState(false);
+  const [activeClass, setActiveClass] = React.useState(0);
+
   return (
     <div className="content-top">
       <div className="categories">
-        <ul>
-          <li>Футболки</li>
-          <li>Кофты</li>
-          <li>Штаны</li>
-        </ul>
+        <button
+          className="searchBtn"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
+          Поиск по категориям :
+        </button>
+        {open && (
+          <ul>
+            {categories.map((value, index) => (
+              <li
+                key={index}
+                onClick={() => {
+                  setActiveClass(index);
+                }}
+                className={activeClass == index ? "active" : ""}
+              >
+                {value}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div>
         <ul className="header-list">

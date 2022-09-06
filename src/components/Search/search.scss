@@ -1,4 +1,4 @@
-input{
+input {
   display: flex;
   margin: 10px auto;
   width: 90%;
@@ -7,4 +7,15 @@ input{
 }
 .sort {
   border-bottom: solid #eaeaea 1px;
+}
+
+.searchBtn {
+  border-radius: 10px;
+  height: 30px;
+  font-size: 18px;
+  margin: 10px 10px;
+  
+}
+.searchBtn:hover{
+  background: #eaeaea ;
 }
