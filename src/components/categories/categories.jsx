@@ -3,35 +3,24 @@ import React from "react";
 
 const categories = ["футболки", "кофты", "штаны"];
 function Categories() {
-  const [open, setOpen] = React.useState(false);
   const [activeClass, setActiveClass] = React.useState(0);
 
   return (
     <div className="content-top">
       <div className="categories">
-        <button
-          className="searchBtn"
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
-          Поиск по категориям :
-        </button>
-        {open && (
-          <ul>
-            {categories.map((value, index) => (
-              <li
-                key={index}
-                onClick={() => {
-                  setActiveClass(index);
-                }}
-                className={activeClass == index ? "active" : ""}
-              >
-                {value}
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul>
+          {categories.map((value, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                setActiveClass(index);
+              }}
+              className={activeClass == index ? "active" : ""}
+            >
+              {value}
+            </li>
+          ))}
+        </ul>
       </div>
       <div>
         <ul className="header-list">
