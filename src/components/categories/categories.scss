@@ -2,6 +2,7 @@ ul {
   display: flex;
   li{
     margin-right: 30px;
+    padding: 5px;
   }
   :hover {
     color:  red;
@@ -10,4 +11,9 @@ ul {
 .content-top {
   display: flex;
   justify-content: space-between;
+  .active{
+    background: #eaeaea;
+    border-radius: 15px;
+  }
 }
+

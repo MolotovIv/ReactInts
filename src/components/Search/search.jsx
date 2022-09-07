@@ -1,4 +1,6 @@
 import "./search.scss";
+import React from "react";
+
 function Search() {
   return (
     <div>
@@ -6,12 +8,7 @@ function Search() {
         <div className="sort__label">
           <input className="searchInput" placeholder="Поиск"></input>
         </div>
-        <div className="sort__popup">
-          <ul>
-            <li className="active">размеру</li>
-            <li>цене</li>
-          </ul>
-        </div>
+        <div className="sort__popup"></div>
       </div>
     </div>
   );

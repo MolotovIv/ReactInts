@@ -1,13 +1,25 @@
 import "./categories.scss";
+import React from "react";
 
+const categories = ["футболки", "кофты", "штаны"];
 function Categories() {
+  const [activeClass, setActiveClass] = React.useState(0);
+
   return (
     <div className="content-top">
       <div className="categories">
         <ul>
-          <li>Футболки</li>
-          <li>Кофты</li>
-          <li>Штаны</li>
+          {categories.map((value, index) => (
+            <li
+              key={index}
+              onClick={() => {
+                setActiveClass(index);
+              }}
+              className={activeClass == index ? "active" : ""}
+            >
+              {value}
+            </li>
+          ))}
         </ul>
       </div>
       <div>
