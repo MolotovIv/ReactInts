@@ -1,4 +1,4 @@
-import Header from "./components/header/header";
+import Header from "./components/header";
 import { Home } from "./components/home";
 import { Routes, Route } from "react-router-dom";
 import { Basket } from "./pages/basket/basket";

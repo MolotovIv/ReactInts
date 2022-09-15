@@ -8,12 +8,12 @@ const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
-    setActiveClass(state, action) {
+    setActiveCategory(state, action) {
       state.category = action.payload;
     },
   },
 });
 
-export const { setActiveClass } = filterSlice.actions;
+export const { setActiveCategory } = filterSlice.actions;
 
 export default filterSlice.reducer;
