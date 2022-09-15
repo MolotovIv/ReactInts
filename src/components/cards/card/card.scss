@@ -8,3 +8,31 @@ button{
 .card-number {
     text-align: center;
 }
+.cards-row {
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    .card {
+      margin: 10px 20px;
+      max-width: 190px;
+      min-width: 180px;
+      max-height: 240px;
+      padding: 30px 10px;
+      border-radius: 40px;
+      border: solid #eaeaea 1px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.04);
+      .card-image {
+        img {
+          display: block;
+          margin-bottom: 5px;
+          margin: auto;
+        }
+      }
+      .card-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }

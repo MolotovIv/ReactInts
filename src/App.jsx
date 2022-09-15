@@ -1,17 +1,17 @@
-import Categories from "./components/categories/categories";
 import Header from "./components/header/header";
-import Search from "./components/Search/search";
-import Cardrow from "./components/cards/card-row";
+import { Home } from "./components/home";
+import { Routes, Route } from "react-router-dom";
+import { Basket } from "./pages/basket/basket";
 
 function App() {
   return (
     <div className="wpapper">
       <Header />
       <div className="content">
-        <h1>Все вещи</h1>
-        <Search />
-        <Categories />
-        <Cardrow />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="basket" element={<Basket />} />
+        </Routes>
       </div>
     </div>
   );
