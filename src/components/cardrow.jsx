@@ -1,19 +1,17 @@
-import Card from "./card";
+import Card from "./card/card";
 import React from "react";
-import Categories from "../categories";
-import { homeContext } from "../home";
+import Categories from "./categories/categories";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveClass } from "../../redux/slices/filterSlice";
+import { setActiveCategory } from "../redux/slices/filterSlice";
 
-function Cardrow() {
+function Cardrow({ inputValue }) {
   const category = useSelector((state) => state.filterSlice.category);
 
   const dispatch = useDispatch();
-  const onChangeCategory = (id) => {
-    dispatch(setActiveClass(id));
+  const onChangeCategory = (index) => {
+    dispatch(setActiveCategory(index));
   };
 
-  const { inputValue } = React.useContext(homeContext);
   const [items, setItems] = React.useState([]);
   const search = inputValue ? `search=${inputValue}` : "";
   const active = category ? `&category=${category}` : "";
@@ -22,9 +20,7 @@ function Cardrow() {
     fetch(
       `https://62eb771c55d2bd170e6ed572.mockapi.io/items?${search}${active}`
     )
-      .then((res) => {
-        return res.json();
-      })
+      .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
       });
@@ -32,12 +28,7 @@ function Cardrow() {
 
   return (
     <>
-      <Categories
-        category={category}
-        onChangeCategory={(i) => {
-          onChangeCategory(i);
-        }}
-      />
+      <Categories category={category} onChangeCategory={onChangeCategory} />
       <div className="cards-row">
         {items.map((value, index) => (
           <Card
