@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./categories.scss";
 
 function IconsList() {
+  const { items, totalPrice } = useSelector((state) => state.cart);
   return (
-    <div>
+    <div style={{ paddingRight: "30px" }}>
       <ul className="header-list">
         <Link to="basket">
           <li>
@@ -10,12 +13,8 @@ function IconsList() {
           </li>
         </Link>
 
-        <li>
-          <img src="/img/vector.png" alt="icon"></img>
-        </li>
-        <li>
-          <img src="/img/union.png" alt="icon"></img>
-        </li>
+        <li>{totalPrice}</li>
+        <li>{items.length}</li>
       </ul>
     </div>
   );

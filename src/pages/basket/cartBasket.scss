@@ -1,0 +1,25 @@
+.row{
+    display: flex;
+    justify-content: center;
+.card{
+    margin: 10px 50px;
+}
+}
+.basketTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        background: #ccc;
+        height: 25px;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+}
+.basketGround{
+    padding: 14px 27px;
+    span{
+        color: red;
+    font-weight: 600;    
+    }
+}

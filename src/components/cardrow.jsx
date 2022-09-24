@@ -23,6 +23,7 @@ function Cardrow({ inputValue }) {
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
+        console.log(items);
       });
   }, [category, inputValue]);
 
@@ -36,6 +37,7 @@ function Cardrow({ inputValue }) {
             title={value.title}
             img={value.img}
             price={value.price}
+            id={value.id}
           />
         ))}
       </div>

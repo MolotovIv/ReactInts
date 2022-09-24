@@ -1,19 +1,33 @@
 import "./card.scss";
-import React, { useState } from "react";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addItems } from "../../redux/slices/cartSlices";
 
-function Card(props) {
+function Card({ img, title, price, id }) {
+  const { items } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const onClickAdd = () => {
+    const item = {
+      id,
+      title,
+      price,
+      img,
+    };
+    dispatch(addItems(item));
+  };
+
   return (
     <div className="card">
       <div className="card-image">
-        <img width={130} height={110} src={props.img} alt="staff"></img>
+        <img width={130} height={110} src={img} alt="staff"></img>
       </div>
-      <h3>{props.title}</h3>
+      <h3>{title}</h3>
       <div className="card-price">
         <div className="card-bottom">
           <h4>Цена:</h4>
-          <p>{props.price}</p>
+          <p>{price}</p>
         </div>
-        <button>
+        <button onClick={onClickAdd}>
           <img height={32} width={32} src="/img/card/Group 91.png"></img>
         </button>
       </div>

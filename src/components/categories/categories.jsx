@@ -23,7 +23,7 @@ function Categories({ category, onChangeCategory }) {
             ))}
           </ul>
         </div>
-        <Toggler />
+
         <IconsList />
       </div>
     </div>

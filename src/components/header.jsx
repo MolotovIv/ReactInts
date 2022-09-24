@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import Toggler from "./categories/toggler";
 function Header() {
   return (
     <header>
@@ -18,6 +18,7 @@ function Header() {
             <h4>Магазин спортивной одежды</h4>
           </div>
         </Link>
+        <Toggler />
       </div>
       <div className=" header-right">
         <h1> FORM AUTORIZATION</h1>
