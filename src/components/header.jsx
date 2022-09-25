@@ -25,7 +25,9 @@ function Header() {
         <Toggler />
       </div>
       <div className=" header-right">
-        <button onClick={() => dispatch(removeUser())}>ВЫЙТИ</button>
+        <button className="logButton" onClick={() => dispatch(removeUser())}>
+          ВЫЙТИ
+        </button>
       </div>
     </header>
   );
