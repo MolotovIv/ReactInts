@@ -8,7 +8,7 @@ const RegisterPage = () => {
       <h1>Register</h1>
       <SignUp />
       <p>
-        Already have an account?<Link to="/login"> Sign in</Link>
+        Already have an account?<Link to="/login"> SIGN IN</Link>
       </p>
     </div>
   );
