@@ -23,7 +23,6 @@ function Cardrow({ inputValue }) {
       .then((res) => res.json())
       .then((arr) => {
         setItems(arr);
-        console.log(items);
       });
   }, [category, inputValue]);
 

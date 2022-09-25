@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import Toggler from "./categories/toggler";
+import { useDispatch } from "react-redux";
+import { removeUser } from "../redux/slices/userSlice";
+
 function Header() {
+  const dispatch = useDispatch();
   return (
     <header>
       <div className="headerleft">
@@ -21,7 +25,7 @@ function Header() {
         <Toggler />
       </div>
       <div className=" header-right">
-        <h1> FORM AUTORIZATION</h1>
+        <button onClick={() => dispatch(removeUser())}>ВЫЙТИ</button>
       </div>
     </header>
   );
